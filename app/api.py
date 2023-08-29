@@ -9,6 +9,8 @@ from langchain.llms import OpenAI
 from pydantic import BaseModel
 from langchain.chains import RetrievalQA
 # create the client
+from fastapi import HTTPException, Depends
+from fastapi.security import APIKeyHeader
 
 
 # Create an instance of the FastAPI class
@@ -35,6 +37,18 @@ qa = RetrievalQA.from_chain_type(
 # query = "i am worried is the system secure"
 # response = qa.run(query)
 
+
+
+API_KEY_HEADER = APIKeyHeader(name="X-API-Key")
+
+# Function to validate the API key
+def authenticate_api_key(api_key: str = Depends(API_KEY_HEADER)):
+    # Replace "your_actual_api_key" with the actual API key you want to use
+    if api_key != os.getenv("FASTAPI_POST_KEY"):
+        raise HTTPException(status_code=403, detail="Invalid API key")
+
+
+
 @app.get("/", tags=["Root"])
 async def read_root():
     return {"Hello": "World"}
@@ -45,7 +59,7 @@ class QueryRequest(BaseModel):
 
 
 @app.post("/qt")
-async def process_query(query_request: QueryRequest):
+async def process_query(query_request: QueryRequest, auth: bool = Depends(authenticate_api_key)):
     query = query_request.query
     # Do something with the query, for example, print it
     response_llm = qa.run(query)
