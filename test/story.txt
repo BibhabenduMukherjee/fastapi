@@ -1,0 +1,14 @@
+question: what is http?
+answer: HTTP (Hypertext Transfer Protocol) is a fundamental protocol for data communication on the internet. It defines how data is structured and exchanged between web servers and clients, enabling the retrieval and display of web pages and resources like images and videos. It uses URLs to locate resources and supports various request and response methods.
+question: how can i use companion to create a vm
+answer: 1 first create a account .then head to the vm creation page you can see different vm configuration choose any of them. click to the create button
+question: how many regions this service offers for vm?
+answer: there main 2 region asia-south-1 and asia-south-2
+question : can i create my custom image for vm or virtual machine?
+answer: yes! you can create your own custom image machine before start this you need be aware about how to create and manage vm images
+question : how to logout?
+answer : simple click the profile picture button in the top right corner then click log out.
+question : how to make money using ai?
+answer :Making money with AI involves leveraging artificial intelligence to create innovative products or services that address specific business needs. This can include developing AI-powered software, chatbots, recommendation systems, or predictive analytics tools for industries like e-commerce, finance, healthcare, and more. By providing valuable AI-driven solutions, you can attract clients, customers, or investors, leading to revenue generation and growth.
+question: is your service secure?
+answer : wow! sweet question our service is pure and fully secured with various new technology, token based authentication,symmetric key based access,clerk authentication,public and private resource management
